@@ -11,16 +11,16 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-  'title' => 'Ns Headless Mask',
-  'description' => 'Support headless for the mask elements',
+  'title' => 'ns_headless_blog – Easily Output TYPO3 Blog Content as JSON',
+  'description' => 'ns_headless_blog TYPO3 extension helps you render blog content in clean JSON format for headless CMS integrations & modern frontend frameworks',
   'category' => 'fe',
-  'version' => '1.0.0',
+  'version' => '13.0.0',
   'state' => 'stable',
   'uploadfolder' => false,
   'clearcacheonload' => false,
-  'author' => 'T3: Nilesh Malankiya',
-  'author_email' => 'info@nitsan.in',
-  'author_company' => NULL,
+  'author' => 'Team T3Planet',
+  'author_email' => 'info@t3planet.de',
+  'author_company' => 'T3Planet',
   'constraints' => 
   array (
     'depends' => 

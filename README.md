@@ -1,3 +1,5 @@
+
+
 # TYPO3 Extension "ns_headless_mask" - Provides TypoScript configuration to render proper JSON from EXT:mask
 This extension provides integration to headless extension with mask extension.
 
