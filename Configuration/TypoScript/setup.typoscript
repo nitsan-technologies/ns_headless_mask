@@ -1,0 +1,1312 @@
+tt_content {
+mask_ns_clients_logo_slider =< lib.contentElementWithHeader
+                    mask_ns_clients_logo_slider {
+                        fields {
+                            content {
+                                fields {
+                clientLogos = TEXT
+                clientLogos {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_client_logos
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_cta =< lib.contentElementWithHeader
+                    mask_ns_cta {
+                        fields {
+                            content {
+                                fields {
+                backgroundColor = TEXT
+                backgroundColor {
+                    field = tx_mask_cta_bg_color
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                headline = TEXT
+                headline {
+                    field = bodytext
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                subHeadline = TEXT
+                subHeadline {
+                    field = header
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                backgroundPattern = TEXT
+                backgroundPattern {
+                    field = tx_mask_bg_pattern
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_cta_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_cta_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_cta_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_slider =< lib.contentElementWithHeader
+                    mask_ns_slider {
+                        fields {
+                            content {
+                                fields {
+                selectDotsStyle = TEXT
+                selectDotsStyle {
+                    field = tx_mask_dots_style
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                dotsPagination = TEXT
+                dotsPagination {
+                    field = tx_mask_slide_dots
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                navigationsArrows = TEXT
+                navigationsArrows {
+                    field = tx_mask_slide_nav
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderLoop = TEXT
+                sliderLoop {
+                    field = tx_mask_slide_loop
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                autoplay = TEXT
+                autoplay {
+                    field = tx_mask_slide_autoplay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                autoplayTimeInMilliSeconds = TEXT
+                autoplayTimeInMilliSeconds {
+                    field = tx_mask_slide_time
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_slide_items
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                subTitle = TEXT
+                subTitle {
+                    field = tx_mask_slide_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_slide_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                title = TEXT
+                title {
+                    field = tx_mask_slide_sub_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_slide_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_slide_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_stepper =< lib.contentElementWithHeader
+                    mask_ns_stepper {
+                        fields {
+                            content {
+                                fields {
+                variations = TEXT
+                variations {
+                    field = tx_mask_stepper_variation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                icons = TEXT
+                icons {
+                    field = tx_mask_icon
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                steps = TEXT
+                steps {
+                    field = tx_mask_stepper_step
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                title = TEXT
+                title {
+                    field = tx_mask_steper_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_stepper_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_progress =< lib.contentElementWithHeader
+                    mask_ns_progress {
+                        fields {
+                            content {
+                                fields {
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_progress_items
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                title = TEXT
+                title {
+                    field = tx_mask_progress_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                progressNumber = TEXT
+                progressNumber {
+                    field = tx_mask_progress_number
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_contact_information =< lib.contentElementWithHeader
+                    mask_ns_contact_information {
+                        fields {
+                            content {
+                                fields {
+                variation = TEXT
+                variation {
+                    field = tx_mask_contact_variation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                title = TEXT
+                title {
+                    field = tx_mask_contact_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                subTitle = TEXT
+                subTitle {
+                    field = tx_mask_contact_sub_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                linkText = TEXT
+                linkText {
+                    field = tx_mask_contact_link_text
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_contact_link
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                contactNumber = TEXT
+                contactNumber {
+                    field = tx_mask_contact_phone
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                eMail = TEXT
+                eMail {
+                    field = tx_mask_contact_mail
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                address = TEXT
+                address {
+                    field = tx_mask_contact_address
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                facebookLink = TEXT
+                facebookLink {
+                    field = tx_mask_contact_fb
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_contact_fb
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                twitterLink = TEXT
+                twitterLink {
+                    field = tx_mask_contact_twiter
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_contact_twiter
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                youtubeLink = TEXT
+                youtubeLink {
+                    field = tx_mask_contact_youtube
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_contact_youtube
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_hero_slider =< lib.contentElementWithHeader
+                    mask_ns_hero_slider {
+                        fields {
+                            content {
+                                fields {
+                sliderDots = TEXT
+                sliderDots {
+                    field = tx_mask_slider_dots
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                dotsDynamicStyle = TEXT
+                dotsDynamicStyle {
+                    field = tx_mask_slider_dots_dyanmic
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderFractionsNumbers = TEXT
+                sliderFractionsNumbers {
+                    field = tx_mask_slider_fractions
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderProgressbar = TEXT
+                sliderProgressbar {
+                    field = tx_mask_slider_pagination_progress
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                thumbsImages = TEXT
+                thumbsImages {
+                    field = tx_mask_slider_thumbs
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderNavigations = TEXT
+                sliderNavigations {
+                    field = tx_mask_slider_nav
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderAutoplay = TEXT
+                sliderAutoplay {
+                    field = tx_mask_slider_autoplay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                autoplayTimeInMilliSeconds = TEXT
+                autoplayTimeInMilliSeconds {
+                    field = tx_mask_slider_autoplay_time
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderLoop = TEXT
+                sliderLoop {
+                    field = tx_mask_slider_loop
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderEffects = TEXT
+                sliderEffects {
+                    field = tx_mask_slider_effects
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderAdaptiveHeights = TEXT
+                sliderAdaptiveHeights {
+                    field = tx_mask_slider_height
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                cornerPatterns = TEXT
+                cornerPatterns {
+                    field = tx_mask_image_with_shape
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderBottomCurves = TEXT
+                sliderBottomCurves {
+                    field = tx_mask_slider_curve
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                            slides = TEXT
+                            slides {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_slider_repeater
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                sliderContent = TEXT
+                sliderContent {
+                    field = tx_mask_slider_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderMedia = TEXT
+                sliderMedia {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_slider_media
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                overlay = TEXT
+                overlay {
+                    field = tx_mask_slider_overlay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                contentPositions = TEXT
+                contentPositions {
+                    field = tx_mask_slider_content_position
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_counters =< lib.contentElementWithHeader
+                    mask_ns_counters {
+                        fields {
+                            content {
+                                fields {
+                counterVariations = TEXT
+                counterVariations {
+                    field = tx_mask_counters_variation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                counterBackgroundText = TEXT
+                counterBackgroundText {
+                    field = tx_mask_counter_bg_text
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_counter_items
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                counterNumber = TEXT
+                counterNumber {
+                    field = tx_mask_counter_number
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                counterSymbolText = TEXT
+                counterSymbolText {
+                    field = tx_mask_counter_symbol
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                title = TEXT
+                title {
+                    field = tx_mask_counter_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_counter_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                icons = TEXT
+                icons {
+                    field = tx_mask_icon
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_icon_teaser =< lib.contentElementWithHeader
+                    mask_ns_icon_teaser {
+                        fields {
+                            content {
+                                fields {
+                background = TEXT
+                background {
+                    field = tx_mask_teaser_background
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                imagePattern = TEXT
+                imagePattern {
+                    field = tx_mask_pattern
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                icons = TEXT
+                icons {
+                    field = tx_mask_icon
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                title = TEXT
+                title {
+                    field = tx_mask_teaser_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_teaser_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                linkText = TEXT
+                linkText {
+                    field = tx_mask_teaser_link_text
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_teaser_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_teaser_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_testimonials =< lib.contentElementWithHeader
+                    mask_ns_testimonials {
+                        fields {
+                            content {
+                                fields {
+                variations = TEXT
+                variations {
+                    field = tx_mask_testimonials_variation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderDots = TEXT
+                sliderDots {
+                    field = tx_mask_testimonials_dots
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                dotsDynamicStyle = TEXT
+                dotsDynamicStyle {
+                    field = tx_mask_testimonials_dots_dynamic
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderLoop = TEXT
+                sliderLoop {
+                    field = tx_mask_testimonials_loop
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderAutoplay = TEXT
+                sliderAutoplay {
+                    field = tx_mask_testimonials_autoplay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                autoplayTimeInMilliSeconds = TEXT
+                autoplayTimeInMilliSeconds {
+                    field = tx_mask_testimonials_time
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderNavigation = TEXT
+                sliderNavigation {
+                    field = tx_mask_navigation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_testimonials
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                name = TEXT
+                name {
+                    field = tx_mask_name
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                designation = TEXT
+                designation {
+                    field = tx_mask_designation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                rating = TEXT
+                rating {
+                    field = tx_mask_rating
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_page_header =< lib.contentElementWithHeader
+                    mask_ns_page_header {
+                        fields {
+                            content {
+                                fields {
+                backgroundImage = TEXT
+                backgroundImage {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_background_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                bottomCurve = TEXT
+                bottomCurve {
+                    field = tx_mask_bottom_curve
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                backgroundText = TEXT
+                backgroundText {
+                    field = tx_mask_background_text
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                headline = TEXT
+                headline {
+                    field = tx_mask_headline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                subheadline = TEXT
+                subheadline {
+                    field = tx_mask_subheadline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                breadcrumbs = TEXT
+                breadcrumbs {
+                    field = tx_mask_breadcrumbs
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_text_with_media =< lib.contentElementWithHeader
+                    mask_ns_text_with_media {
+                        fields {
+                            content {
+                                fields {
+                variation = TEXT
+                variation {
+                    field = tx_mask_text_with_media_variation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                media = TEXT
+                media {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_text_with_media_media
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_media_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                subheadline = TEXT
+                subheadline {
+                    field = tx_mask_text_with_media_subheadline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                headline = TEXT
+                headline {
+                    field = tx_mask_text_with_media_headline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_text_with_media_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_map =< lib.contentElementWithHeader
+                    mask_ns_map {
+                        fields {
+                            content {
+                                fields {
+                mapIframeLink = TEXT
+                mapIframeLink {
+                    field = tx_mask_map
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_service_card =< lib.contentElementWithHeader
+                    mask_ns_service_card {
+                        fields {
+                            content {
+                                fields {
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_service_items
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                title = TEXT
+                title {
+                    field = tx_mask_service_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_service_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                icons = TEXT
+                icons {
+                    field = tx_mask_icon
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_service_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_service_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_accordion =< lib.contentElementWithHeader
+                    mask_ns_accordion {
+                        fields {
+                            content {
+                                fields {
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_accordion_items
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                title = TEXT
+                title {
+                    field = tx_mask_accordion_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_accordion_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_image_teaser =< lib.contentElementWithHeader
+                    mask_ns_image_teaser {
+                        fields {
+                            content {
+                                fields {
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_teaser
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                title = TEXT
+                title {
+                    field = tx_mask_teaser_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_teaser_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_teaser_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_teaser_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_video =< lib.contentElementWithHeader
+                    mask_ns_video {
+                        fields {
+                            content {
+                                fields {
+                backgroundImage = TEXT
+                backgroundImage {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_video_background
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                overlay = TEXT
+                overlay {
+                    field = tx_mask_video_overlay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                headline = TEXT
+                headline {
+                    field = tx_mask_video_headline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                subheadline = TEXT
+                subheadline {
+                    field = tx_mask_video_subheadline
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                video = TEXT
+                video {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_video_video
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_three_column_teaser =< lib.contentElementWithHeader
+                    mask_ns_three_column_teaser {
+                        fields {
+                            content {
+                                fields {
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_three_column_teaser_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                            teasers = TEXT
+                            teasers {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_three_column_teaser
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                title = TEXT
+                title {
+                    field = tx_mask_three_column_teaser_title
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                content = TEXT
+                content {
+                    field = tx_mask_three_column_teaser_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                icons = TEXT
+                icons {
+                    field = tx_mask_icon
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_audio =< lib.contentElementWithHeader
+                    mask_ns_audio {
+                        fields {
+                            content {
+                                fields {
+                audio = TEXT
+                audio {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_audio
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                mask_ns_team =< lib.contentElementWithHeader
+                    mask_ns_team {
+                        fields {
+                            content {
+                                fields {
+                variations = TEXT
+                variations {
+                    field = tx_mask_team_variations
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                selectDotsStyle = TEXT
+                selectDotsStyle {
+                    field = tx_mask_dots_style
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderDots = TEXT
+                sliderDots {
+                    field = tx_mask_team_dots
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                navigations = TEXT
+                navigations {
+                    field = tx_mask_team_nav
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderAutoplay = TEXT
+                sliderAutoplay {
+                    field = tx_mask_team_autoplay
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                sliderLoop = TEXT
+                sliderLoop {
+                    field = tx_mask_team_loop
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                autoplayTimeInMilliSeconds = TEXT
+                autoplayTimeInMilliSeconds {
+                    field = tx_mask_team_time
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                            items = TEXT
+                            items {
+                                dataProcessing {
+                                    10 = FriendsOfTYPO3\Headless\DataProcessing\DatabaseQueryProcessor
+                                    10 {
+                                        table = tx_mask_team_member
+                                        where.field = uid
+                                        pidInList.field = pid
+                                        where.intval = 1
+                                        where.dataWrap = parentid = |
+                                        orderBy = sorting
+                                        as = content
+                                        fields {
+                                           
+                name = TEXT
+                name {
+                    field = tx_mask_team_member_name
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                designation = TEXT
+                designation {
+                    field = tx_mask_team_member_designation
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                image = TEXT
+                image {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_team_member_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                link = TEXT
+                link {
+                    field = tx_mask_team_link
+                    as = link
+                    typolink {
+                        parameter {
+                            field = tx_mask_team_link
+                        }
+                        returnLast = result
+                    }
+                }
+            
+                                        }
+                                    }
+                                }
+                            }
+                        
+                                }
+                            }
+                        }
+                    }
+                mask_ns_quote =< lib.contentElementWithHeader
+                    mask_ns_quote {
+                        fields {
+                            content {
+                                fields {
+                backgroundColor = TEXT
+                backgroundColor {
+                    field = tx_mask_quote_background
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                position = TEXT
+                position {
+                    field = tx_mask_quote_icon_position
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                quoteText = TEXT
+                quoteText {
+                    field = tx_mask_quote_content
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                authorImage = TEXT
+                authorImage {
+                    dataProcessing {
+                        10 = FriendsOfTYPO3\Headless\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = tx_mask_quote_image
+                            as = image
+                            processingConfiguration {
+                                delayProcessing = 1
+                            }
+                        }
+                    }
+                }
+            
+                authorName = TEXT
+                authorName {
+                    field = tx_mask_quote_author
+                    parseFunc =< lib.parseFunc_links
+                }
+            
+                                }
+                            }
+                        }
+                    }
+                
+}
