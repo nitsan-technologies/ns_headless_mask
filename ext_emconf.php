@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = array (
   'title' => 'ns_headless_mask – Easily Render JSON from TYPO3 EXT:mask',
   'description' => 'The ns_headless_mask TYPO3 extension provides TypoScript setup to generate clean JSON output from EXT:mask for headless CMS integrations',
   'category' => 'fe',
-  'version' => '13.0.1',
+  'version' => '13.0.2',
   'state' => 'stable',
   'uploadfolder' => false,
   'clearcacheonload' => false,
@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = array (
     'depends' => 
     array (
       'typo3' => '12.0.0-13.5.99',
+      'ns_license' => '14.5.4-14.9.99',
       'frontend' => '12.0.0-13.5.99',
     ),
     'suggests' => 
